@@ -6,11 +6,24 @@ await import('./src/env.js');
 
 /** @type {import("next").NextConfig} */
 const config = {
-  rewrites: async () => {
+  async headers() {
     return [
       {
-        source: '/api/estates',
-        destination: 'https://www.sreality.cz/api/cs/v2/estates',
+        source: '/api/v1/:slug',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*', // Set your origin
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE, OPTIONS',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization',
+          },
+        ],
       },
     ];
   },

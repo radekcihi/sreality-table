@@ -6,8 +6,8 @@ import { useToast } from '@/hooks/use-toast';
 import { useQuery } from '@tanstack/react-query';
 import AddPropertyButton from './AddPropertyButton';
 import EstateTable from './EstateTable';
-import type { Estate } from './api/types';
-import { fetchEstates } from './api/utils';
+import type { Estate, EstateWithoutHashId } from './api/types';
+import { getEstates } from './api/utils';
 import { searchParams } from '@/lib/searchParams';
 import {
   Select,
@@ -38,12 +38,12 @@ export default function RealEstateTable({
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ['estates', estateAge, category, page, perPage],
-    queryFn: () => fetchEstates(page, perPage, estateAge, category),
+    queryFn: () => getEstates(page, perPage, estateAge, category),
     initialData: initialData,
   });
 
   const handleAdd = useCallback(
-    (newItem: Omit<Estate, 'hash_id'>) => {
+    (newItem: EstateWithoutHashId) => {
       const newEstate: Estate = {
         ...newItem,
         hash_id: Math.floor(Math.random() * 1000000),

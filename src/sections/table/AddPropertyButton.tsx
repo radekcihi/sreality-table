@@ -8,13 +8,13 @@ import {
 } from '@/components/ui/dialog';
 import { PlusIcon } from '@radix-ui/react-icons';
 import PropertyForm from './PropertyForm';
-import { type Estate } from './api/types';
+import { type EstateWithoutHashId } from './api/types';
 import { useState } from 'react';
 
 export default function AddPropertyButton({
   onAdd,
 }: {
-  onAdd: (item: Omit<Estate, 'hash_id'>) => void;
+  onAdd: (item: EstateWithoutHashId) => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 

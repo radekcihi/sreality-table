@@ -13,7 +13,6 @@ import { searchParams } from '@/lib/searchParams';
 import { FilterIcon } from 'lucide-react';
 import { useQueryState } from 'nuqs';
 import { useState } from 'react';
-import { Category } from './api/types';
 
 export const categoryEnum = {
   0: 'All Categories',

@@ -22,9 +22,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 
-import { CategoryEnum, type Estate } from './api/types';
-
-type EstateWithoutHashId = Omit<Estate, 'hash_id'>;
+import { CategoryEnum, type Estate, type EstateWithoutHashId } from './api/types';
 
 const enumType = {
   1: 'Sale',
