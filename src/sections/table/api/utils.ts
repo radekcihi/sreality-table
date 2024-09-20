@@ -19,7 +19,8 @@ export async function fetchEstates(
       },
     });
 
-    const validatedData = ApiResponseSchema.safeParse(response.data);
+    const data = response.data;
+    const validatedData = ApiResponseSchema.safeParse(data);
 
     if (!validatedData.success) {
       console.error('API response validation error:', validatedData.error.errors);
@@ -28,7 +29,7 @@ export async function fetchEstates(
 
     return {
       estates: validatedData.data._embedded.estates,
-      totalPages: Math.ceil(validatedData.data.result_size / response.data.per_page),
+      totalPages: Math.ceil(validatedData.data.result_size / data.per_page),
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
@@ -37,11 +38,24 @@ export async function fetchEstates(
     }
     if (axios.isAxiosError(error)) {
       console.error('Axios error:', error.message);
-      throw new Error(`Failed to fetch data: ${error.message}`);
+      throw new Error(`Failed to fetch data: ${error.message} `);
     }
     console.error('Error fetching estates:', error);
     throw error;
   }
+}
+
+export async function getEstates(page: number, perPage: number, estateAge: number | null, category: number | null): Promise<{ estates: Estate[]; totalPages: number }> {
+  const response = await axios.get<{ estates: Estate[]; totalPages: number }>('/api/estates', {
+    params: {
+      page,
+      perPage,
+      estateAge,
+      category,
+    },
+  });
+
+  return response.data;
 }
 
 export function renderType(type: number): string {
