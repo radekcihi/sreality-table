@@ -132,7 +132,7 @@ export default function PropertyForm({
             <FormItem>
               <FormLabel>Type</FormLabel>
               <Select
-                onValueChange={(value) => field.onChange(Number(value))}
+                onValueChange={(value) => field.onChange(value)}
                 defaultValue={field.value.toString()}
               >
                 <FormControl>
