@@ -1,5 +1,5 @@
 import { fetchEstates } from '@/sections/table/api/utils';
-import RealEstateTable from '@/sections/table/RealEstateTable';
+import RealEstateTable from '@/sections/table/Estate';
 import { Suspense } from 'react';
 import { type SearchParams } from 'nuqs/parsers';
 import { searchParamsCache } from '@/lib/searchParams';

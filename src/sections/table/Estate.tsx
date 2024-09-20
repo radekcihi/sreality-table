@@ -4,7 +4,7 @@ import React, { useCallback, useState } from 'react';
 import { useQueryState } from 'nuqs';
 import { useToast } from '@/hooks/use-toast';
 import { useQuery } from '@tanstack/react-query';
-import AddPropertyButton from './AddPropertyButton';
+import AddPropertyButton from '../property/AddPropertyButton';
 import EstateTable from './EstateTable';
 import type { Estate, EstateWithoutHashId } from './api/types';
 import { getEstates } from './api/utils';

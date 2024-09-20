@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/dialog';
 import { PlusIcon } from '@radix-ui/react-icons';
 import PropertyForm from './PropertyForm';
-import { type EstateWithoutHashId } from './api/types';
+import { type EstateWithoutHashId } from '../table/api/types';
 import { useState } from 'react';
 
 export default function AddPropertyButton({

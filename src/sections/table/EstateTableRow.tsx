@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dialog';
 
 import { Pencil1Icon, TrashIcon } from '@radix-ui/react-icons';
-import PropertyForm from './PropertyForm';
+import PropertyForm from '../property/PropertyForm';
 import { Badge } from '@/components/ui/badge';
 import { renderCategory, renderType } from './api/utils';
 
