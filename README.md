@@ -1,29 +1,64 @@
-# Create T3 App
+# Project Name
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Real estate listings app
 
-## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Technologies Used
 
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Axios](https://axios-http.com)
 - [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- [nuqs](https://nuqs.47ng.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [TanStack Table](https://tanstack.com/table/latest)
+- [Radix UI](https://www.radix-ui.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 
-## Learn More
+## Prerequisites
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- [Node.js](https://nodejs.org)
+- [pnpm](https://pnpm.io)
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Getting Started
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+1. Clone the repository:
 
-## How do I deploy this?
+   ```
+   git clone https://github.com/yourusername/your-repo-name.git
+   ```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+2. Navigate to the project directory:
+
+   ```
+   cd your-repo-name
+   ```
+
+3. Install dependencies:
+
+   ```
+   pnpm install
+   ```
+
+4. Run the development server:
+
+   ```
+   pnpm dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+## Building for Production
+
+To create a production build:
+
+```
+pnpm build
+```
+
+## Running the production build
+
+```
+pnpm start
+```
