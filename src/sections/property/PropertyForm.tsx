@@ -22,7 +22,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 
-import { CategoryEnum, type Estate, type EstateWithoutHashId } from '../table/api/types';
+import { type Estate, type EstateWithoutHashId } from '../table/api/types';
 
 const enumType = {
   1: 'Sale',
@@ -41,8 +41,8 @@ const formSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   locality: z.string().min(1, 'Locality is required'),
   price: z.coerce.number().min(1, 'Price must be a positive number'),
-  type: z.number().min(1).max(2),
-  category: CategoryEnum,
+  type: z.coerce.number().min(1).max(2),
+  category: z.coerce.number().min(1).max(5),
   labels: z.array(z.string()).default([]),
   gps: z.object({
     lat: z.number(),
